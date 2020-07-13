@@ -1,0 +1,5 @@
+set output_folder=c:\Users\Mikalai_Dziashuk\Videos\test\temp
+
+REM for %%a in (*.mkv) do mkvpropedit "%%~a" --edit track:s1 --set flag-default=0
+
+for /r %%a in (*.mkv) do call mkvmerge -o "%output_folder%\%%~na.mkv" --audio-tracks 1,4 --language 0:eng --default-track 0:yes --display-dimensions 0:1280x720 --language 1:rus --track-name ^"1:MVO ^(Paramount Comedy^)^" --language 4:eng --track-name 4:Original --default-track 4:yes --forced-track 4:yes --sub-charset 5:UTF-8 --language 5:rus --track-name 5:Notabenoid --sub-charset 6:UTF-8 --language 6:eng --track-name 6:SDH --default-track 6:no "%%a" --title 2 --track-order 0:0,0:1,0:4,0:5,0:6
